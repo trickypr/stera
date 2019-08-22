@@ -1,0 +1,1 @@
+module.exports = require('./tests/browser/webpack.config')

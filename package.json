@@ -4,7 +4,7 @@
   "description": "A tiny component library",
   "main": "src/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "webpack-dev-server --color"
   },
   "repository": {
     "type": "git",
@@ -19,5 +19,14 @@
   "bugs": {
     "url": "https://github.com/trickypr/Micro/issues"
   },
-  "homepage": "https://github.com/trickypr/Micro#readme"
+  "homepage": "https://github.com/trickypr/Micro#readme",
+  "devDependencies": {
+    "babel-loader": "^8.0.6",
+    "webpack": "^4.39.2",
+    "webpack-cli": "^3.3.7",
+    "webpack-dev-server": "^3.8.0",
+    "@babel/core": "^7.5.5"
+  },
+  "dependencies": {
+  }
 }

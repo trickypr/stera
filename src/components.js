@@ -2,17 +2,15 @@ export default class Componet extends HTMLElement {
   constructor(isClosed = false) {
     super()
 
-    //TODO: Write code so you can choose between open and closed
     this.shadow = this.attachShadow({mode: isClosed  ? 'closed': 'open'})
+    this.update()
 
-    this.init()
-  }
-
-  async init() {
     this.attributeObserver = new MutationObserver(this.attributesChange.bind(this))
     this.attributeObserver.observe(this, { attributes: true })
+  }
 
-    this.shadow.innerHTML = await this.update()
+  async update() {
+    this.shadow.innerHTML = await this.render()
   }
 
   /**
