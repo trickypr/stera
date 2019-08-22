@@ -1,4 +1,4 @@
-import { Component, html } from "../../src"
+import { Component, html, define } from "../../src"
 
 class Test extends Component {
   render() {
@@ -8,4 +8,4 @@ class Test extends Component {
   }
 }
 
-customElements.define('test-el', Test)
+define('test-el', Test)
