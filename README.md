@@ -1,7 +1,8 @@
-# Micro
+# Stera
 A tiny library for writing shadow dom components in javascript.
 
 ## Why use it? 
+The goal of this project is to provide a shadow dom component libary and nothing else. As of such, this library is tiny and modular. If you have tree shaking set up, it could only take 1kb to set up and run just the base class.
 
 ## Todo
 - [ ] Basic component API 
@@ -12,14 +13,14 @@ A tiny library for writing shadow dom components in javascript.
 - [ ] Set up github actions 
 
 ## Getting started
-Micro is designed to be dropped into a basic es6 application. You just need to extend the base component library and declare it. The folowing code is all that is required to declare and use a custom elemet.
+Stera is designed to be dropped into a basic es6 application. You just need to extend the base component library and declare it. The folowing code is all that is required to declare and use a custom element.
 
 ```js 
 import { Component, html } from '@micro/core'
 
 class Card extends Component {
   render() {
-    return html`
+    return `
       <slot></slot>
 
       <style>

@@ -24,14 +24,15 @@ export default class Componet extends HTMLElement {
    */
   bindListener(type, func) {
     switch (type.toLowerCase()) {
-      case 'attributes':
-        if (!this.attributeChangeFuncs) this.attributeChangeFuncs = []
-        this.attributesChange.push(func)
-        break
+    case 'attributes':
+      if (!this.attributeChangeFuncs) this.attributeChangeFuncs = []
+      this.attributesChange.push(func)
+      break
     
-      default:
-        console.error(`The type '${type}' is not a valid event`)
-        break
+    default:
+      // eslint-disable-next-line no-console
+      console.error(`The type '${type}' is not a valid event`)
+      break
     }
   }
   
