@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 const {join} = require('path')
 
 module.exports = {
@@ -18,6 +19,7 @@ module.exports = {
   },
   devServer: {
     contentBase: __dirname,
+    host: '0.0.0.0',
     compress: true
   }
 }
