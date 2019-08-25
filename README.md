@@ -16,7 +16,7 @@ The goal of this project is to provide a shadow dom component libary and nothing
 Stera is designed to be dropped into a basic es6 application. You just need to extend the base component library and declare it. The folowing code is all that is required to declare and use a custom element.
 
 ```js 
-import { Component, html } from '@micro/core'
+import { Component, html } from 'stera'
 
 class Card extends Component {
   render() {
