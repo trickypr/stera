@@ -1,5 +1,5 @@
 {
-  "name": "micro",
+  "name": "stera",
   "version": "1.0.0-rc1",
   "description": "A tiny component library",
   "main": "src/index.js",
