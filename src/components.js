@@ -1,4 +1,4 @@
-export default class Componet extends HTMLElement {  
+export default class Component extends HTMLElement {  
   constructor(isClosed = false) {
     super()
 
@@ -7,6 +7,11 @@ export default class Componet extends HTMLElement {
   }
 
   async update() {
-    this.shadow.innerHTML = await this.render()
+    const html = await this.render()
+
+    this.shadow.innerHTML = ''
+
+    if (typeof html === 'string') this.shadow.innerHTML = html
+    else this.shadow.appendChild(html)
   }
 }
