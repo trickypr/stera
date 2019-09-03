@@ -20,7 +20,8 @@ import { Component, html } from 'stera'
 
 class Card extends Component {
   render() {
-    return `
+    // Note: You don't need html
+    return html`
       <slot></slot>
 
       <style>

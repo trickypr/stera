@@ -1,8 +1,8 @@
-import { Component } from '../../src'
+import { Component, html } from '../../src'
 
 class Card extends Component {
   render() {
-    return `
+    return html`
       <slot></slot>
 
       <style>
