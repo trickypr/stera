@@ -14,9 +14,7 @@ jobs:
         node-version: 12
     - name: yarn install
       run: yarn install
-    - name: eslint
-      uses: icrawl/action-eslint@v1
+    - name: ESLint
+      run: npx github-actions-eslint-annotator
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      with:
-        job-name: eslint
