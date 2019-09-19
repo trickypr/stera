@@ -119,10 +119,10 @@
     lodash "^4.17.13"
     to-fast-properties "^2.0.0"
 
-"@neovici/github-actions-eslint-annotator@^0.1.4":
-  version "0.1.4"
-  resolved "https://registry.yarnpkg.com/@neovici/github-actions-eslint-annotator/-/github-actions-eslint-annotator-0.1.4.tgz#203dda23a03e9fc3977bd20fa84acce0d5cc2d52"
-  integrity sha512-x/Qrl2RKOCzOSJgbLMRURaD/9H2DQEiEw7J0/DwWDWuxpTXtVywEDHpycPciDJ7rVTEAbMCSXfUXtpngC4BDEA==
+"@neovici/github-actions-eslint-annotator@^0.2.0":
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/@neovici/github-actions-eslint-annotator/-/github-actions-eslint-annotator-0.2.0.tgz#043e931ba804b67e75d81bfc2d790cdbafeeb4ea"
+  integrity sha512-D8ATfbPQdP1fEeSQIX6zK2LJtjdx6tO+zwnM5n9jJ1wvlkUkbmyVGiEy1Ph/AzJj7s5p6rZDbioQt65+FS6XOQ==
   dependencies:
     eslint "^5.15.1"
 
