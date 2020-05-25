@@ -1,2 +1,3 @@
-import { Component, IComponent } from './component.js'
-export { Component, IComponent }
+import { Component, IComponent } from './component.js';
+import { html } from './html.js';
+export { html, Component, IComponent };

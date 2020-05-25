@@ -1,8 +1,5 @@
 import {Component} from '../../dist/index.js'
 
-console.log(Component)
-
-
 class Card extends Component {
 	render() {
 		const container = document.createElement('div')

@@ -16,32 +16,31 @@
     along with this program.  If not, see <https://www.gnu.org/licenses/>.
 */
 export class Component extends HTMLElement {
-	constructor() {
-		super()
-		this.shadow = this.attachShadow({
-			mode: 'open'
-		})
-		// setTimeout(() => this.update(), 1)
-		this.update()
-	}
-	get state() {
-		return this.storedState
-	}
-	set state(newState) {
-		this.storedState = newState
-		this.update()
-	}
-	update() {
-		const internalEl = this.render()
-		if (!(internalEl instanceof HTMLElement))
-			throw new Error('The render function doesn\'t return an HTMLElement')
-		this.shadow.innerHTML = ''
-		this.shadow.append(internalEl)
-	}
-	render() {
-		const warnEl = document.createElement('p')
-		warnEl.innerText = 'This component does not contain any content'
-		console.warn('A component does not contain any content')
-		return warnEl
-	}
+    constructor() {
+        super();
+        this.shadow = this.attachShadow({
+            mode: 'open'
+        });
+        this.update();
+    }
+    get state() {
+        return this.storedState;
+    }
+    set state(newState) {
+        this.storedState = newState;
+        this.update();
+    }
+    update() {
+        const internalEl = this.render();
+        if (!(internalEl instanceof HTMLElement))
+            throw new Error('The render function doesn\'t return an HTMLElement');
+        this.shadow.innerHTML = '';
+        this.shadow.append(internalEl);
+    }
+    render() {
+        const warnEl = document.createElement('p');
+        warnEl.innerText = 'This component does not contain any content';
+        console.warn('A component does not contain any content');
+        return warnEl;
+    }
 }
