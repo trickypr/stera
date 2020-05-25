@@ -3,8 +3,22 @@ on:
   pull_request:
 
 jobs:
-  eslint:
-    name: eslint
+  build:
+    name: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: install node v12
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12
+      - name: yarn install
+        run: yarn install --frozen-lockfile
+      - name: Build
+        run: yarn build
+
+  lint:
+    name: lint
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
