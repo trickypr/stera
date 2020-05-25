@@ -13,7 +13,7 @@ jobs:
       with:
         node-version: 12
     - name: yarn install
-      run: yarn install
+      run: yarn install --frozen-lockfile
     - name: ESLint
       run: npx github-actions-eslint-annotator
       env:
