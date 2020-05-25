@@ -1,17 +1,17 @@
-import {Component} from "../../dist/index.js";
+import {Component} from '../../dist/index.js'
 
-console.log(Component);
+console.log(Component)
 
 
 class Card extends Component {
-  render() {
-    const container = document.createElement("div");
+	render() {
+		const container = document.createElement('div')
 
-    const slot = document.createElement("slot");
-    container.appendChild(slot);
+		const slot = document.createElement('slot')
+		container.appendChild(slot)
 
-    const style = document.createElement("style");
-    style.textContent = `
+		const style = document.createElement('style')
+		style.textContent = `
       :host {
         background: #fff;
         border-radius: 2px;
@@ -23,11 +23,11 @@ class Card extends Component {
         width: 300px;
         box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
       }
-    `;
-    container.appendChild(style);
+    `
+		container.appendChild(style)
 
-    return container;
-  }
+		return container
+	}
 }
 
-customElements.define("material-card", Card);
+customElements.define('material-card', Card)

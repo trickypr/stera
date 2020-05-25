@@ -1,2 +1,2 @@
-import { Component } from './component.js';
-export { Component };
+import { Component } from './component.js'
+export { Component }

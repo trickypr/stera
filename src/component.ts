@@ -33,7 +33,6 @@ export class Component extends HTMLElement implements IComponent {
 		this.shadow = this.attachShadow({
 			mode: 'open'
 		})
-		// setTimeout(() => this.update(), 1)
 		this.update()
 	}
 
