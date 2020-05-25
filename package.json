@@ -2,10 +2,11 @@
   "name": "stera",
   "version": "2.0.0-rc1",
   "description": "A tiny, native web component library built around the shadow dom.",
-  "main": "src/index.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
-    "serve": "webpack-dev-server --color",
-    "build": "webpack --mode production"
+    "lint": "eslint .",
+    "build": "tsc"
   },
   "repository": {
     "type": "git",
@@ -23,6 +24,11 @@
   "homepage": "https://github.com/trickypr/Micro#readme",
   "devDependencies": {
     "@neovici/github-actions-eslint-annotator": "^0.2.0",
+    "eslint": "^7.1.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-prettier": "^3.1.3",
+    "prettier": "2.0.5",
+    "typescript": "^3.9.3"
   },
   "dependencies": {}
 }
