@@ -16,13 +16,7 @@
 	along with this program.  If not, see <https://www.gnu.org/licenses/>.
 */
 
-export interface IComponent {
-	shadow: ShadowRoot
-	render: () => HTMLElement
-	state: any
-}
-
-export class Component extends HTMLElement implements IComponent {
+export class Component extends HTMLElement {
 	shadow: ShadowRoot
 
 	private storedState;

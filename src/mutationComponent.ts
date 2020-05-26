@@ -16,12 +16,16 @@
 	along with this program.  If not, see <https://www.gnu.org/licenses/>.
 */
 
-export const html = (h, ...values) => {
-	const wrapper = document.createElement('div')
-	
-	wrapper.innerHTML = h.reduce((result, s, i) => result + s + (values[i] ? values[i] : '') , '').replace('\t', '')
+import { Component } from './component.js'
 
-	if (wrapper.childElementCount != 1) throw new Error('HTML can\'t have more or less than one root node.')
+export class MutationComponent extends Component {
+	mutationConfig: MutationObserverInit = { attributes: true }
+	private observer: MutationObserver
 
-	return wrapper.children[0]
+	constructor() {
+		super()
+
+		this.observer = new MutationObserver(() => this.update())
+		this.observer.observe(this, this.mutationConfig)
+	}
 }
