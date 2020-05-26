@@ -2,11 +2,24 @@
 <html lang="en">
 	<meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>Document</title>
+	<title>Nav Bar example</title>
+
+	<style>
+		body {
+			margin: 0;
+			font-family: sans-serif;
+		}
+	</style>
 
 	<nav-bar>
-		tst
+		<nav-item href="/">Home</nav-item>
+		<nav-item href="/examples/nav" active>Nav</nav-item>
+		<nav-item href="/examples/card">Cards</nav-item>
 	</nav-bar>
+
+	<br>
+
+	<p><a>Test link</a></p>
 
 	<script src="./nav.js" type="module" async></script>
 </html>

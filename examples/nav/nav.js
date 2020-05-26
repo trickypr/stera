@@ -4,15 +4,12 @@ class NavBar extends Component {
 	render() {
 		return html`
 			<nav>
-				<h1>Test</h1>	
+				<slot></slot>
 
 				<style>
-					:host {
-						width: 100%;
-					}
-
 					nav {
-						width: 100%;
+						width: 100vw;
+						height: 60px;
 						overflow: none;
 					}
 				</style>
@@ -20,5 +17,44 @@ class NavBar extends Component {
 		`
 	}
 }
-
 customElements.define('nav-bar', NavBar)
+
+
+class NavItem extends Component {
+	render() {
+		const active = this.getAttribute('active') 
+
+		return html`
+			<a href="${this.getAttribute('href')}" class="${active == true || active == '' ? 'active' : ''}">
+				<slot></slot>
+
+				<style>
+					/* Style the links inside the navigation bar */
+					a {
+						float: left;
+						color: #f2f2f2;
+						background-color: #212121;
+						text-align: center;
+						padding: 14px 16px;
+						margin: 5px;
+						text-decoration: none;
+						font-size: 17px;
+					}
+
+					/* Change the color of links on hover */
+					a:hover {
+						background-color: #ddd;
+						color: black;
+					}
+
+					/* Add a color to the active/current link */
+					a.active {
+						background-color: black;
+						color: white;
+					}
+				</style>
+			</a>
+		`
+	}
+}
+customElements.define('nav-item', NavItem)
