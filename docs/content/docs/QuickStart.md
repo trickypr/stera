@@ -1,8 +1,8 @@
-# Quick start for react devs
+# Quick Start
 Stera is designed to be easy to plug into any project. Unlike react or vue, it is best suited for dropping into static html. 
 
 {{< hint info >}}
-This is a guide for React developers. If you are not coming from React you might find the [Quick Start](../quickstart) guide more helpful.
+This is a general guide. If you are coming from React you might find the [Quick Start For React Developers](../quickstartforreactdevs) guide more helpful.
 {{< /hint >}}
 
 ## Installation
@@ -27,6 +27,7 @@ import { /* Modules you want */ } from 'https://unpkg.com/browse/stera@1.0.0-rc2
 ```
 
 ## Creating a component
+In stera components are build around classes. Each component can extend the be
 Components are created by extending the `Component` class. Similar to react, there is a `render` function that must be created. This render element must return a `HTMLElement`. 
 
 ```js
