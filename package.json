@@ -7,7 +7,8 @@
   "scripts": {
     "lint": "eslint .",
 		"build": "tsc",
-		"docs:dev": "cd docs && hugo server "
+		"build:prod": "tsc --removeComments",
+		"docs:dev": "cd docs && hugo server"
   },
   "repository": {
     "type": "git",
@@ -15,11 +16,13 @@
   },
   "keywords": [
     "DOM",
-    "shadow dom",
+		"shadow dom",
+		"shadow-dom",
     "components",
     "web components",
     "web-components",
-    "custom elements"
+		"custom elements",
+		"custom-elements"
   ],
   "author": "trickypr",
   "license": "GPL-3.0-or-later",
