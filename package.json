@@ -6,7 +6,8 @@
   "types": "dist/index.d.ts",
   "scripts": {
     "lint": "eslint .",
-    "build": "tsc"
+		"build": "tsc",
+		"docs:dev": "cd docs && hugo server "
   },
   "repository": {
     "type": "git",
