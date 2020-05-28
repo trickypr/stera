@@ -19,23 +19,22 @@
 export class Component extends HTMLElement {
 	shadow: ShadowRoot
 
-	private storedState;
+	state
 
-	constructor() {
+	constructor(state?: any) {
 		super()
 
 		this.shadow = this.attachShadow({
 			mode: 'open'
 		})
+
+		if (state) this.state = state
+
 		this.update()
 	}
 
-	get state() {
-		return this.storedState
-	}
-
-	set state(newState) {
-		this.storedState = newState
+	setState(newState) {
+		this.state = newState
 		this.update()
 	}
 
