@@ -3,8 +3,24 @@ on:
   pull_request:
 
 jobs:
+	lint: 
+		name: Lint 
+		runs-on: ubuntu-latest
+		steps:
+			- uses: actions/checkout@v1
+      - name: install node v12
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12
+      - name: yarn install
+        run: yarn install --frozen-lockfile
+      - name: ESLint
+        run: npx github-actions-eslint-annotator
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
   build:
-    name: Runner
+    name: Build
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
@@ -16,7 +32,4 @@ jobs:
         run: yarn install --frozen-lockfile
       - name: Build
         run: yarn build
-      - name: ESLint
-        run: npx github-actions-eslint-annotator
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
