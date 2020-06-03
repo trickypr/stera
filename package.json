@@ -1,33 +1,44 @@
 {
   "name": "stera",
-  "version": "1.0.0-rc2",
-  "description": "A tiny component library",
-  "main": "src/index.js",
+  "version": "1.0.0-rc3",
+  "description": "A tiny, native web component library built around the shadow dom.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
-    "serve": "webpack-dev-server --color",
-    "build": "webpack --mode production"
+    "lint": "eslint .",
+    "build": "tsc",
+    "build:prod": "gulp",
+    "docs:dev": "cd docs && hugo server"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/trickypr/Micro.git"
+    "url": "git+https://github.com/trickypr/Stera.git"
   },
   "keywords": [
     "DOM",
-    "Components"
+    "shadow dom",
+    "shadow-dom",
+    "components",
+    "web components",
+    "web-components",
+    "custom elements",
+    "custom-elements"
   ],
   "author": "trickypr",
   "license": "GPL-3.0-or-later",
   "bugs": {
-    "url": "https://github.com/trickypr/Micro/issues"
+    "url": "https://github.com/trickypr/Stera/issues"
   },
-  "homepage": "https://github.com/trickypr/Micro#readme",
+  "homepage": "https://github.com/trickypr/Stera#readme",
   "devDependencies": {
-    "@babel/core": "^7.5.5",
-    "@neovici/github-actions-eslint-annotator": "^0.2.0",
-    "babel-loader": "^8.0.6",
-    "webpack": "^4.39.2",
-    "webpack-cli": "^3.3.7",
-    "webpack-dev-server": "^3.8.0"
+    "@neovici/github-actions-eslint-annotator": "^0.4.0",
+    "@typescript-eslint/eslint-plugin": "^3.0.2",
+    "@typescript-eslint/parser": "^3.0.2",
+    "eslint": "^7.1.0",
+    "gulp": "^4.0.2",
+    "gulp-minify": "^3.1.0",
+    "gulp-typescript": "^6.0.0-alpha.1",
+    "typescript": "^3.9.3"
   },
   "dependencies": {}
 }
