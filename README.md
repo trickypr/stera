@@ -1,84 +1,43 @@
+<div align="center">
+
 # Stera
 
-A tiny library for writing shadow dom components in javascript.
+[![CodeFactor](https://www.codefactor.io/repository/github/trickypr/stera/badge)](https://www.codefactor.io/repository/github/trickypr/stera)
+![npm](https://img.shields.io/npm/v/stera)
+![npm](https://img.shields.io/npm/dm/stera)
 
-## Why use it?
-
-The goal of this project is to provide a shadow dom component libary and nothing else. As of such, this library is tiny and modular. If you have tree shaking set up, it could only take 1kb to set up and run just the base class.
-
-## Todo
-
-- [ ] Basic component API
-- [ ] Write docs
-- [ ] Add CSS templating
-- [ ] Build some examples
-- [ ] Add e2e tests
-- [ ] Set up github actions
+A tiny javascript library for native web components with minimal overhead
+</div>
 
 ## Getting started
+You can import stera from npm through a build tool or import it with esmodules.
+```js
+// Intall with 'npm i stera@1.0.0-rc1'
+import { Component } from 'stera'
+// or import as an esmodule
+import { Component } from 'https://unpkg.com/browse/stera@1.0.0/dist/index.js'
+```
 
-Stera is designed to be dropped into a basic es6 application. You just need to extend the base component library and declare it. The folowing code is all that is required to declare and use a custom element.
+Then you an write a component in a similar way to you would write a stateful react component.
 
 ```js
-import { Component, html } from "stera";
+import { Component, html } from 'stera'
 
-class Card extends Component {
-  render() {
-    // Note: You don't need html
-    return html`
-      <slot></slot>
-
-      <style>
-        :host {
-          background: #fff;
-          border-radius: 2px;
-          display: inline-block;
-          height: auto;
-          margin: 1rem;
-          padding: 1rem;
-          position: relative;
-          width: 300px;
-          box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-        }
-      </style>
-    `;
-  }
+class HelloWorld extends Component {
+	render() {
+		return html`
+			<h1>Hello world</h1>
+		`
+	}
 }
-
-customElements.define("material-card", Card);
 ```
 
-```html
-<!DOCTYPE html>
-<html>
-  <body>
-    <material-card>
-      <h1>Hello world</h1>
-    </material-card>
-    <material-card>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Congue eu consequat
-        ac felis donec et odio pellentesque. Consectetur purus ut faucibus
-        pulvinar elementum integer enim neque. Pharetra convallis posuere morbi
-        leo. Habitant morbi tristique senectus et. Fames ac turpis egestas
-        integer eget aliquet nibh praesent. At risus viverra adipiscing at in
-        tellus integer feugiat. Sagittis id consectetur purus ut faucibus
-        pulvinar elementum integer. Duis ut diam quam nulla. Et molestie ac
-        feugiat sed lectus.
-      </p>
-    </material-card>
-
-    <style>
-      body {
-        display: flex;
-      }
-    </style>
-
-    <script src="bundle.js"></script>
-  </body>
-</html>
+Then you can declare it with `customElements.define`.
+```js 
+customElements.define('hello-world', HelloWorld)
 ```
+
+Now you can insert `hello-world` into any html.
 
 ## License
 Stera, A tiny, native web component library built around the shadow dom
