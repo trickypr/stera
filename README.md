@@ -12,7 +12,7 @@ A tiny javascript library for native web components with minimal overhead
 ## Getting started
 You can import stera from npm through a build tool or import it with esmodules.
 ```js
-// Intall with 'npm i stera@1.0.0-rc1'
+// Intall with 'npm i stera@1.0.0'
 import { Component } from 'stera'
 // or import as an esmodule
 import { Component } from 'https://unpkg.com/browse/stera@1.0.0/dist/index.js'

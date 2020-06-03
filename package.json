@@ -1,6 +1,6 @@
 {
   "name": "stera",
-  "version": "1.0.0-rc3",
+  "version": "1.0.0",
   "description": "A tiny, native web component library built around the shadow dom.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
