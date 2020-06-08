@@ -1,4 +1,4 @@
-import {Component} from '../../dist/index.js'
+import {Component} from 'https://unpkg.com/browse/stera/dist/index.js'
 
 class Card extends Component {
 	render() {
