@@ -8,8 +8,8 @@
     "lint": "eslint .",
     "build": "tsc",
     "build:prod": "gulp",
-    "docs:dev": "vuepress dev docs",
-    "docs:build": "vuepress build docs"
+    "docs:dev": "cd docs && vuepress dev",
+    "docs:build": "vuepress build ./docs/"
   },
   "repository": {
     "type": "git",
@@ -40,7 +40,7 @@
     "gulp-minify": "^3.1.0",
     "gulp-typescript": "^6.0.0-alpha.1",
     "typescript": "^3.9.3",
-    "vuepress": "^1.5.0"
+    "vuepress": "^1.5.1"
   },
   "dependencies": {}
 }
