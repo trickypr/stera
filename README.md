@@ -15,7 +15,7 @@ You can import stera from npm through a build tool or import it with esmodules.
 // Intall with 'npm i stera@1.0.0'
 import { Component } from 'stera'
 // or import as an esmodule
-import { Component } from 'https://unpkg.com/browse/stera@1.0.0/dist/index.js'
+import { Component } from 'https://unpkg.com/stera/dist/index.js'
 ```
 
 Then you an write a component in a similar way to you would write a stateful react component.

@@ -6,7 +6,7 @@ There are two options to install Stera in your project. You can either use a unp
 
 ```js
 // Note: you will need to add type="module" to the script tag
-import {} from 'https://unpkg.com/browse/stera/dist/index.js'
+import {} from 'https://unpkg.com/stera/dist/index.js'
 ```
 
 or you an install it via npm:
@@ -25,7 +25,7 @@ import {} from 'stera'
 Stera uses class-based components. There are two classes that can be extended. There is the standard `Component` class and `MutationComponent`. We will go over `MutationComponent` later.
 
 ```js
-import { Component } from 'https://unpkg.com/browse/stera/dist/index.js'
+import { Component } from 'https://unpkg.com/stera/dist/index.js'
 
 class HelloWorld extends Component {
 	render() {
@@ -40,7 +40,7 @@ class HelloWorld extends Component {
 The render function must return a `HTMLElement` javascript object. However, writing code using `createElement` is a pain. That is why we have the `html` template generator that lets you wright normal html.
 
 ```js
-import { Component, html } from 'https://unpkg.com/browse/stera/dist/index.js'
+import { Component, html } from 'https://unpkg.com/stera/dist/index.js'
 
 class HelloWorld extends Component {
 	render() {
@@ -54,7 +54,7 @@ class HelloWorld extends Component {
 You then need to give the element a name. You can do this using the `customElements.define` function.
 
 ```js{11}
-import { Component, html } from 'https://unpkg.com/browse/stera/dist/index.js'
+import { Component, html } from 'https://unpkg.com/stera/dist/index.js'
 
 class HelloWorld extends Component {
 	render() {

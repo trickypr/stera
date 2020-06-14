@@ -1,4 +1,4 @@
-import { MutationComponent, html } from 'https://unpkg.com/stera@1.0.0/dist/index.js'
+import { MutationComponent, html } from 'https://unpkg.com/stera/dist/index.js'
 
 class ProgressBar extends MutationComponent {
 	render() {

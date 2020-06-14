@@ -2,7 +2,7 @@
 Like all major frameworks, we have the idea of states. States are a variable that, when updated, will recall the `render` function. 
 
 ```js
-import { Component, html } from 'https://unpkg.com/browse/stera/dist/index.js'
+import { Component, html } from 'https://unpkg.com/stera/dist/index.js'
 
 class Counter extends Component {
 	render() {
@@ -32,7 +32,7 @@ this.state is undefined
 We need to pass the state into the super function for it to work properly.
 
 ```js{5}
-import { Component, html } from 'https://unpkg.com/browse/stera/dist/index.js'
+import { Component, html } from 'https://unpkg.com/stera/dist/index.js'
 
 class Counter extends Component {
 	constructor() {

@@ -1,4 +1,4 @@
-import { Component, html } from 'https://unpkg.com/browse/stera/dist/index.js'
+import { Component, html } from 'https://unpkg.com/stera/dist/index.js'
 
 class NavBar extends Component {
 	render() {
