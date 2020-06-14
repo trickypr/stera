@@ -2,11 +2,9 @@ import { MutationComponent, html } from 'https://unpkg.com/stera/dist/index.js'
 
 class ProgressBar extends MutationComponent {
 	render() {
-		const progressWidth = this.getAttribute('progress')
-
 		return html`
 			<div class="progress container">
-				<div class="progress bar" style="width: ${progressWidth}%"></div>
+				<div class="progress bar" style="width: ${this.getAttribute('progress')}%"></div>
 
 				<style>
 					:root {
