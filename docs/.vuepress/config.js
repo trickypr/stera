@@ -13,7 +13,8 @@ module.exports = {
 		sidebar: [
 			'/guide/quickStart.md',
 			'/guide/usingStates.md',
-			'/guide/attributes.md'
+			'/guide/attributes.md',
+			'/guide/jsx.md'
 		]
 	}
 }
