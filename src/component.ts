@@ -19,7 +19,7 @@
 export class Component extends HTMLElement {
 	shadow: ShadowRoot
 
-	state
+	state: any
 
 	constructor(state?: any) {
 		super()

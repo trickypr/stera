@@ -22,8 +22,10 @@ export class MutationComponent extends Component {
 	mutationConfig: MutationObserverInit = { attributes: true }
 	private observer: MutationObserver
 
-	constructor(state?: any) {
+	constructor(state?: any, mutationConfig?: MutationObserverInit) {
 		super(state)
+
+		if (mutationConfig) this.mutationConfig = mutationConfig
 
 		this.observer = new MutationObserver(() => this.update())
 		this.observer.observe(this, this.mutationConfig)

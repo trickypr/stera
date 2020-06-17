@@ -66,3 +66,5 @@ docs/
 .gitmodules
 .editorconfig
 .eslintrc.json
+
+.cache

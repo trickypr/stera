@@ -1,0 +1,16 @@
+h1 {
+	text-align: center;
+	margin-top: 10vh;
+}
+
+.split {
+	display: grid;
+	grid-template-columns: 50% 50%;
+	text-align: center;
+}
+
+@media (max-width: 750px) {
+	.split {
+		display: block;
+	}
+}
