@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-unused-vars
 import React from 'jsx-dom'
 
 import { Component } from 'stera'
