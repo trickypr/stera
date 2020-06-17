@@ -1,6 +1,7 @@
 module.exports = {
 	title: 'Stera',
 	description: 'A tiny web component library using the shadow dom',
+	base: "/stera/docs/",
 	themeConfig: {
 		docsRepo: 'trickypr/stera',
 		docsDir: 'docs',

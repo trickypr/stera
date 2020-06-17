@@ -1,13 +1,13 @@
 /* eslint-disable no-undef */
 const { mkdirSync } = require('fs')
-const { removeSync, copySync, copy } = require('fs-extra')
-const {exec} = require('child_process')
+const { removeSync, copySync } = require('fs-extra')
+const { exec } = require('child_process')
 
 const { series, parallel, dest, src } = require('gulp')
-
-const examples = require('../examples/examples')
 const minify = require('gulp-minify')
 const merge = require('merge-stream')
+
+const examples = require('../examples/examples')
 
 function preClean(cb) {
 	removeSync('../pages')
@@ -20,10 +20,10 @@ function preClean(cb) {
 }
 
 function vuepress(cb) {
-	exec('yarn docs:build', () => cb())
-	copySync('../docs/.vuepress/dist', '../pages/docs')
-
-	cb()
+	exec('yarn docs:build', () => {
+		copySync('../docs/.vuepress/dist', '../pages/docs')
+		cb()
+	})
 }
 
 function staticExamples() {
@@ -38,17 +38,34 @@ function staticExamples() {
 	return merge(tasks)
 }
 
-function parcelExampleSetup(cb) {
-	examples.parcel.forEach(({ src, tmp }) => {
-		copySync(src, tmp)
+function parcelExamples() {
+	const tasks = examples.parcel.map(example => {
+		return series(
+			cb => parcelExamplesSetup(cb, example),
+			cb => parcelExamplesBuild(cb, example)
+		)
 	})
 
-	examples.parcel.forEach(({ tmp }) => {
-		return src(`${tmp}/package.json`)
-			.pipe(yarn)
-	})
+	return parallel(
+		...tasks
+	)
+}
 
-	cb()
+function parcelExamplesSetup(cb, example) {
+	const { src, tmp } = example
+
+	copySync(src, tmp)
+
+	exec(`cd ${tmp} && yarn install --frozen-lockfile`, cb)
+}
+
+function parcelExamplesBuild(cb, example) {
+	const { tmp, name } = example
+
+	exec(`cd ${tmp} && yarn build`, () => {
+		copySync(`${tmp}/dist`, `../pages/examples/${name}`)
+		cb()
+	})
 }
 
 function postClean(cb) {
@@ -63,7 +80,7 @@ exports.default =
 		parallel(
 			vuepress,
 			staticExamples,
-			parcelExampleSetup
+			parcelExamples()
 		),
-		// postClean
+		postClean
 	)

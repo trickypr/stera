@@ -1,4 +1,4 @@
-name: Docs builder
+name: Site builder
 
 on:
   push:
@@ -16,5 +16,5 @@ jobs:
           node-version: 12
       - name: yarn install
         run: yarn install --frozen-lockfile
-      - name: Build docs
-        run: yarn docs:build
+      - name: Build Site
+        run: yarn site:build

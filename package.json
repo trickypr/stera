@@ -9,7 +9,8 @@
     "build": "tsc",
     "build:prod": "gulp",
     "docs:dev": "cd docs && vuepress dev",
-    "docs:build": "vuepress build ./docs/"
+		"docs:build": "vuepress build ./docs/",
+		"site:build": "gulp -f scripts/docsBuilder.js"
   },
   "repository": {
     "type": "git",
@@ -40,6 +41,7 @@
     "gulp": "^4.0.2",
     "gulp-minify": "^3.1.0",
     "gulp-typescript": "^6.0.0-alpha.1",
+    "gulp-yarn": "^2.0.0",
     "merge-stream": "^2.0.0",
     "typescript": "^3.9.3",
     "vuepress": "^1.5.1"
