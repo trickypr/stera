@@ -51,7 +51,8 @@ function migrateHome(cb) {
 	const { home } = examples
 
 	const files = readdirSync(`../tmp/${home.name}/dist`)
-
+	console.log(files)
+	
 	files.forEach(file => {
 		moveSync(`../tmp/${home.name}/dist/${file}`, `../pages/${file}`, { overwrite: true })
 	})
