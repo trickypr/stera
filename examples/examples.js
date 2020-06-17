@@ -9,6 +9,7 @@ function example(folder) {
 
 // eslint-disable-next-line no-undef
 module.exports = {
+	home: example('home'),
 	static: [
 		example('card'),
 		example('counter'),
