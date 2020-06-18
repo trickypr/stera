@@ -2,7 +2,7 @@
 import React from 'jsx-dom'
 import { Component } from 'stera'
 
-import examples from '../examples'
+import examples from './examples'
 
 class ExampleLinks extends Component {
 	render() {

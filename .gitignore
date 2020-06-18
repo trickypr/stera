@@ -64,3 +64,5 @@ typings/
 .cache
 
 pages
+
+.DS_Store

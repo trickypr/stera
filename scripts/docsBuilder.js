@@ -9,15 +9,21 @@ const merge = require('merge-stream')
 
 const examples = require('../examples/examples')
 
+// Filesystem functions
 function preClean(cb) {
-	removeSync('../tmp')
-
 	emptyDirSync('../pages')
-	mkdirSync('../tmp')
+	emptyDirSync('../tmp')
 
 	cb()
 }
 
+function postClean(cb) {
+	removeSync('../tmp')
+	
+	cb()
+}
+
+// Docs build
 function vuepress(cb) {
 	exec('yarn docs:build', () => {
 		copySync('../docs/.vuepress/dist', '../pages/docs')
@@ -25,6 +31,7 @@ function vuepress(cb) {
 	})
 }
 
+// Copy static examples
 function staticExamples() {
 	const tasks = examples.static.map(example => {
 		return src(`${example.src}/*.js`)
@@ -37,29 +44,7 @@ function staticExamples() {
 	return merge(tasks)
 }
 
-function home() {
-	const { home } = examples
-
-	return series(
-		cb => parcelExamplesSetup(cb, home),
-		cb => parcelExamplesBuild(cb, home),
-		migrateHome
-	)
-}
-
-function migrateHome(cb) {
-	const { home } = examples
-
-	const files = readdirSync(`${home.tmp}/dist`)
-	console.log(files)
-
-	files.forEach(file => {
-		moveSync(`${home.tmp}/dist/${file}`, `../pages/${file}`, { overwrite: true })
-	})
-
-	cb()
-}
-
+// Build examples that need a build tool
 function parcelExamples() {
 	const tasks = examples.parcel.map(example => {
 		return series(
@@ -91,20 +76,27 @@ function parcelExamplesBuild(cb, example) {
 	})
 }
 
-function postClean(cb) {
-	removeSync('../tmp')
-	
+// Copy the landing page over
+function migrateHome(cb) {
+	const { home } = examples
+
+	const files = readdirSync(`../pages/examples/${home}`)
+
+	files.forEach(file => {
+		copySync(`../pages/examples/${home}/${file}`, `../pages/${file}`, { overwrite: true })
+	})
+
 	cb()
 }
 
 exports.default = 
 	series(
 		preClean,
-		home(),
 		parallel(
 			vuepress,
 			staticExamples,
 			parcelExamples()
 		),
+		migrateHome,
 		postClean
 	)
