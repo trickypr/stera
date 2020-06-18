@@ -63,13 +63,13 @@ function parcelExamplesSetup(cb, example) {
 
 	copySync(src, tmp)
 
-	exec(`cd ${tmp} && yarn install  --network-concurrency 1 --frozen-lockfile`, cb)
+	exec(`cd ${tmp} && npm ci`, cb)
 }
 
 function parcelExamplesBuild(cb, example) {
 	const { tmp, name } = example
 
-	exec(`cd ${tmp} && yarn build`, () => {
+	exec(`cd ${tmp} && npm run-script build`, () => {
 		copySync(`${tmp}/dist`, `../pages/examples/${name}`)
 		console.log(`Parcel build '${name}' has finished`)
 		cb()
