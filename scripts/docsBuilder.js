@@ -51,7 +51,7 @@ function staticExamples() {
 			.pipe(htmlmin({
 				collapseWhitespace: true
 			}))
-			.pipe(gulp.dest(`../pages/examples/${example.name}`))
+			.pipe(dest(`../pages/examples/${example.name}`))
 	})
 	
 	return merge(jsTasks, cssTasks)
