@@ -1,9 +1,11 @@
 /* eslint-disable no-undef */
-const { mkdirSync, readdirSync } = require('fs')
-const { removeSync, copySync, emptyDirSync, moveSync } = require('fs-extra')
+const { readdirSync } = require('fs')
+const { removeSync, copySync, emptyDirSync } = require('fs-extra')
 const { exec } = require('child_process')
 
 const { series, parallel, dest, src } = require('gulp')
+
+const htmlmin = require('gulp-htmlmin')
 const minify = require('gulp-minify')
 const merge = require('merge-stream')
 
@@ -33,15 +35,26 @@ function vuepress(cb) {
 
 // Copy static examples
 function staticExamples() {
-	const tasks = examples.static.map(example => {
+	const jsTasks = examples.static.map(example => {
 		return src(`${example.src}/*.js`)
 			.pipe(minify({
+				ext: {
+					min:'.js'
+				},
 				noSource: true
 			}))
 			.pipe(dest(`../pages/examples/${example.name}`))
 	})
+
+	const cssTasks = examples.static.map(example => {
+		return src(`${example.src}/*.html`)
+			.pipe(htmlmin({
+				collapseWhitespace: true
+			}))
+			.pipe(gulp.dest(`../pages/examples/${example.name}`))
+	})
 	
-	return merge(tasks)
+	return merge(jsTasks, cssTasks)
 }
 
 // Build examples that need a build tool

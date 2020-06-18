@@ -9,8 +9,8 @@
     "build": "tsc",
     "build:prod": "gulp",
     "docs:dev": "cd docs && vuepress dev",
-		"docs:build": "vuepress build ./docs/",
-		"site:build": "gulp -f scripts/docsBuilder.js"
+    "docs:build": "vuepress build ./docs/",
+    "site:build": "gulp -f scripts/docsBuilder.js"
   },
   "repository": {
     "type": "git",
@@ -39,6 +39,7 @@
     "eslint": "^7.1.0",
     "fs-extra": "^9.0.1",
     "gulp": "^4.0.2",
+    "gulp-htmlmin": "^5.0.1",
     "gulp-minify": "^3.1.0",
     "gulp-typescript": "^6.0.0-alpha.1",
     "gulp-yarn": "^2.0.0",
