@@ -63,7 +63,7 @@ function parcelExamplesSetup(cb, example) {
 
 	copySync(src, tmp)
 
-	exec(`cd ${tmp} && yarn install --frozen-lockfile`, cb)
+	exec(`cd ${tmp} && yarn install`, cb)
 }
 
 function parcelExamplesBuild(cb, example) {
