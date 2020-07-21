@@ -21,6 +21,8 @@ export class Component extends HTMLElement {
 
 	state: any
 
+	initState?: () => any
+
 	constructor(state?: any) {
 		super()
 
@@ -29,6 +31,7 @@ export class Component extends HTMLElement {
 		})
 
 		if (state) this.state = state
+		else if (this.initState) this.state = this.initState()
 
 		this.update()
 	}

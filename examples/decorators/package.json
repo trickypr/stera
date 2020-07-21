@@ -1,0 +1,19 @@
+{
+  "name": "jsx",
+  "version": "1.0.0",
+  "private": "true",
+  "scripts": {
+    "dev": "parcel index.html",
+    "build": "parcel build index.html --public-url ./"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.10.4",
+    "@babel/plugin-proposal-decorators": "^7.10.4",
+    "@babel/preset-react": "^7.10.4",
+    "parcel-bundler": "^1.12.4"
+  },
+  "dependencies": {
+    "jsx-dom": "^6.4.17",
+    "stera": "^1.0.0"
+  }
+}

@@ -4,9 +4,13 @@ import React from 'jsx-dom'
 import { Component } from 'stera'
 
 class Counter extends Component {
-	constructor() {
-		super({ counter: 0 })
+	state = {
+		counter: 0
 	}
+	
+	// constructor() {
+	// 	super({ counter: 0 })
+	// }
 
 	render() {
 		return (
