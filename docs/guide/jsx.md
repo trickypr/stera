@@ -41,7 +41,7 @@ return (
 This code is easier to write, easier to debug, and easier to read through later. There is better support for it in most IDEs because it is used by [React](https://reactjs.org).
 
 ## Working with jsx
-Stera doesn't include an implementation of jsx. Instead, because stera inly requires a `HTMLElement` input, you can use a library that converts jsx to `HTMLElement`. The one I found that works is [jsx-dom](https://www.npmjs.com/package/jsx-dom), however, there are other libraries that do a similar thing like [dom-chef](https://www.npmjs.com/package/dom-chef). You just have to include the library in your file, wrangle your build tool, and check it out.
+Stera doesn't include an implementation of jsx. Instead, because stera requires a `HTMLElement` input, you can use a library that converts jsx to `HTMLElement`. The one I found that works is [jsx-dom](https://www.npmjs.com/package/jsx-dom), however, there are other libraries that do a similar thing like [dom-chef](https://www.npmjs.com/package/dom-chef). You just have to include the library in your file, wrangle your build tool, and check it out.
 
 ```jsx
 import React from 'jsx-dom'
