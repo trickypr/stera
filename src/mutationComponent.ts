@@ -29,5 +29,7 @@ export class MutationComponent extends Component {
 
 		this.observer = new MutationObserver(() => this.update())
 		this.observer.observe(this, this.mutationConfig)
+
+		setTimeout(() => this.update(), 0)
 	}
 }
